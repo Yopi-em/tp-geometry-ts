@@ -9,6 +9,7 @@ describe("test LineString", () => {
         expect(l.getNumPoints()).to.equal(0);
         // get point N
         expect(l.getPointN(3)).to.equal(undefined);
+        expect(l.isEmpty()).to.be.true;
     });
     it("test constructor with points", () => {
         const a = new Point([3.0, 4.0]);
@@ -21,6 +22,7 @@ describe("test LineString", () => {
         expect(l.getPointN(0)).to.equal(a);
         expect(l.getPointN(1)).to.equal(b);
         expect(l.getPointN(3)).to.equal(undefined);
+        expect(l.isEmpty()).to.be.false;
     });
     it("should return 'Point' for getType()", () => {
         const l = new LineString();
