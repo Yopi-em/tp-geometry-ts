@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import EnvelopeBuilder from "../src/EnvelopeBuilder.ts";
+import EnvelopeBuilder from "../src/EnvelopeBuilder";
 
 describe("test EnvelopeBuilder", () => {
     
