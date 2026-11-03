@@ -18,10 +18,10 @@ describe("test LineString", () => {
     it("test constructor with points", () => {
         const a = new Point([3.0, 4.0]);
         const b = new Point([4.0, 2.0]);
-        const c = new Point([7.0, 6.0]);
-        const d = new Point([8.0, 4.0]);
 
         const l = new LineString([a,b]);
+        // clone
+        const lCopy = l.clone();
         // get num
         expect(l.getNumPoints()).to.equal(2);
         // get point N
@@ -29,9 +29,11 @@ describe("test LineString", () => {
         expect(l.getPointN(1)).to.equal(b);
         expect(l.getPointN(3)).to.equal(undefined);
         // translate 
-        l.translate(4.0, 2.0);
+        lCopy.translate(4.0, 2.0);
         expect(l.getPointN(0)).to.equal(a);
         expect(l.getPointN(1)).to.equal(b);
+        expect(lCopy.getPointN(0)).not.equal(a);
+        expect(lCopy.getPointN(1)).not.equal(b);
         // isEmpty 
         expect(l.isEmpty()).to.be.false;
     });

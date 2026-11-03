@@ -30,4 +30,13 @@ export default class LineString implements Geometry {
             }
         }
     }
+
+    clone(): LineString {
+        let list = []
+        for (let i=0; i < this.getNumPoints(); i++){
+            list.push(this.getPointN(i).clone());
+        }
+        return new LineString(list);
+        
+    }
 }

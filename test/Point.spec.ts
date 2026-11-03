@@ -19,10 +19,13 @@ describe("test Point", () => {
         expect(p.getCoordinate()).to.deep.equal([3.0,4.0]);
         expect(p.x()).to.equal(3.0);
         expect(p.y()).to.equal(4.0);
+        const pCopy = p.clone()
         // translate
         p.translate(4.0, 2.0);
         expect(p.x()).to.equal(7.0);
         expect(p.y()).to.equal(6.0);
+        expect(pCopy.x()).to.equal(3.0);
+        expect(pCopy.y()).to.equal(4.0);
         // isEmpty
         expect(p.isEmpty()).to.be.false;
     });
