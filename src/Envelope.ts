@@ -52,7 +52,7 @@ export default class Envelope {
             return "[" + this.getXmin() + ","
                         + this.getYmin() + ","
                         + this.getXmax() + ","
-                        + this.getYmax() + ","
+                        + this.getYmax() + "]"
         }else{
             return "[]"
         }

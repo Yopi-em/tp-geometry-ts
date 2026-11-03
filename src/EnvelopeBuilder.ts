@@ -24,7 +24,10 @@ export default class EnvelopeBuilder {
     }
 
     build(): Envelope{
-        return new Envelope([this.xmin, this.ymin], [this.xmax, this.ymax]);
-
+        if(this.coordonnes.length === 0){
+            return new Envelope();
+        }else{
+            return new Envelope([this.xmin, this.ymin], [this.xmax, this.ymax]);
+        }
     }
 }
