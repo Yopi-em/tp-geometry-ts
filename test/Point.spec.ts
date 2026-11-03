@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import Point from "../src/Point";
+import EnvelopeBuilder from "../src/EnvelopeBuilder";
 
 describe("test Point", () => {
     it("test default constructor", () => {
@@ -32,6 +33,15 @@ describe("test Point", () => {
     it("should return 'Point' for getType()", () =>{
         const p = new Point();
         expect(p.getType()).to.equal("Point");
-    })
+    });
+
+    it("test envelope", () => {
+        const p = new Point([3.0,4.0]);
+        const e = new EnvelopeBuilder();
+        e.insert([3.0,4.0]);
+        const result = e.build();
+        expect(p.getEnvelope()).to.deep.equal(result);
+
+    });
 });
 
