@@ -11,7 +11,7 @@ export default class Envelope {
 
     isEmpty(): Boolean{
         return this.topRight.length === 0 
-            || this.bottomLeft.length === 0; //true si vide
+            && this.bottomLeft.length === 0; //true si vide
     }
 
     getXmin(): number {
