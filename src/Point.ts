@@ -23,8 +23,16 @@ export default class Point implements Geometry {
   getType(): String {
     return "Point";
   }
+
   isEmpty(): Boolean {
         return this.coordinate.length === 0; //true si vide
     }
+
+  translate(dx: number, dy: number): void {
+    if(! this.isEmpty()){
+      this.coordinate[0] += dx;
+      this.coordinate[1] += dy;
+    }
+  }
 
 }
