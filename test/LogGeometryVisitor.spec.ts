@@ -5,7 +5,7 @@ import LineString from "../src/LineString";
 
 describe("test LogGeometryVisitor", () => {
     it('calls console.log Point', () => {
-        // methode trouvé sur https://vitest.dev/api/vi, car je n'était pas sûr de la méthode demandée.
+        // methode trouvée sur https://vitest.dev/api/vi, car je n'étais pas sûre de la méthode demandée.
         using spy = vi.spyOn(console, 'log').mockImplementation(() => {});
         const visitor = new LogGeometryVisitor();
         const geometry = new Point([3.0,4.0]);
