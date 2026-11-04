@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import Point from "../src/Point";
 import LineString from "../src/LineString";
-import Coordinate from "../src/Coordinate";
 import WktWriter from "../src/WktWriter";
 
 describe("test WktWriter", () => {
