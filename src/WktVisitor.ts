@@ -1,6 +1,6 @@
-import GeometryVisitor from "./GeometryVisitor";
-import LineString from "./LineString";
-import Point from "./Point";
+import type GeometryVisitor from "./GeometryVisitor";
+import type LineString from "./LineString";
+import type Point from "./Point";
 import WktWriter from "./WktWriter";
 
 export default class WktVisitor implements GeometryVisitor {
