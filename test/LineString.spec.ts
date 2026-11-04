@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import LineString from "../src/LineString";
 import Point from "../src/Point";
+import EnvelopeBuilder from "../src/EnvelopeBuilder";
 
 describe("test LineString", () => {
     it("test default constructor", () => {
@@ -41,4 +42,15 @@ describe("test LineString", () => {
         const l = new LineString();
         expect(l.getType()).to.equal("LineString");
     })
+    it("test envelope", () => {
+        const a = new Point([3.0, 4.0]);
+        const b = new Point([4.0, 2.0]);
+        const l = new LineString([a,b]);
+        const e = new EnvelopeBuilder();
+        e.insert([3.0,4.0]);
+        e.insert([4.0,2.0]);
+        const result = e.build();
+        expect(l.getEnvelope()).to.deep.equal(result);
+
+    });
 });
