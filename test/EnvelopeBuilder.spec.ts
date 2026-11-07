@@ -26,7 +26,7 @@ describe("test EnvelopeBuilder", () => {
         expect(result.getXmax()).to.equal(2.0);
         expect(result.getYmin()).to.equal(0.0);
         expect(result.getYmax()).to.equal(3.0);
-        expect(result.toString()).to.equal("[0,0,2,3]");
+        expect(result.toString()).to.equal("[0.0,0.0,2.0,3.0]");
         expect(result.isEmpty()).to.be.false;        
     })
 })

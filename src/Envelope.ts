@@ -49,10 +49,10 @@ export default class Envelope {
 
     toString(): String {
         if(!this.isEmpty()){
-            return "[" + this.getXmin() + ","
-                        + this.getYmin() + ","
-                        + this.getXmax() + ","
-                        + this.getYmax() + "]"
+            return "[" + this.getXmin().toFixed(1) + ","
+                        + this.getYmin().toFixed(1) + ","
+                        + this.getXmax().toFixed(1) + ","
+                        + this.getYmax().toFixed(1) + "]"
         }else{
             return "[]"
         }
