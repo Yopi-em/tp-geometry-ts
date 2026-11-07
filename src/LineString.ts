@@ -45,14 +45,6 @@ export default class LineString extends AbstractGeometry {
         
     }
 
-    getEnvelope(): Envelope {
-        const builder = new EnvelopeBuilder();
-        for (let i=0; i < this.getNumPoints(); i++){
-            builder.insert([this.getPointN(i).x(), this.getPointN(i).y()]);
-        }
-        return builder.build()
-    }
-
     accept(visitor: GeometryVisitor): void {
         visitor.visitLineString(this);
     }
